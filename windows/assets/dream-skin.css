@@ -1538,7 +1538,9 @@ html[data-dream-skin="active"] :is(
 }
 
 /* Expanded command details are tool-result nodes rather than messages. They
-   should not introduce an opaque card between otherwise transparent messages. */
+   should not introduce an opaque card between otherwise transparent messages.
+   Preserve descendant opacity: native status transitions stack text layers
+   and hide inactive layers with opacity. */
 html[data-dream-skin="active"] .thread-scroll-container
   [data-local-conversation-item-target-ids] {
   box-sizing: border-box;
@@ -1549,11 +1551,6 @@ html[data-dream-skin="active"] .thread-scroll-container
   color: rgb(var(--ds-text-rgb) / .94) !important;
   box-shadow: none !important;
   backdrop-filter: none !important;
-}
-
-html[data-dream-skin="active"] .thread-scroll-container
-  [data-local-conversation-item-target-ids] :is(p, pre, code, samp, kbd, span) {
-  opacity: 1 !important;
 }
 
 /* Search routes ship an opaque sticky band and input surface. Keep the

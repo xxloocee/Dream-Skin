@@ -23,6 +23,7 @@
     SURFACE_CLASSES.map((name) => `[class~="${name}"]`).join(',') + ')';
   const SURFACE_BOUNDARIES = [
     'aside', '[role="dialog"]', '[role="menu"]', '[role="tooltip"]',
+    '[data-anchor-positioning]',
     '[data-summary-panel-variant]', '[data-radix-popper-content-wrapper] > div',
     '[data-composer-home-utility-bar-position="above"]',
     '[data-composer-utility-rail]',
@@ -1080,7 +1081,10 @@
       ...composerNodes, ...selectorNodes("home-utility"),
       ...[...parts].filter(([, part]) => part === "sidebar" || part === "dialog").map(([node]) => node),
     ].filter((node) => !shellParts.has(parts.get(node)) &&
-      !node.closest?.(PROTECTED_SURFACE_CONTENT)));
+      !node.closest?.(PROTECTED_SURFACE_CONTENT) &&
+      // Native popover hosts are zero-sized positioning wrappers. A backdrop
+      // filter would make the host a containing block and break child anchors.
+      !node.matches?.('[popover]:has(> [data-anchor-positioning])')));
     // A generic bg-surface wrapper around the entire app must not become an
     // extra panel or cause every independent panel beneath it to lose its tint.
     const sceneWrappers = new Set([...candidates]
@@ -1098,6 +1102,7 @@
       // Portaled and inline floating surfaces both need their own paint even
       // when their logical parent belongs to an existing panel.
       const floating = parts.get(node) === "dialog" || node.matches?.('[role="dialog"], [role="menu"], [role="tooltip"]') ||
+        node.hasAttribute?.('data-anchor-positioning') ||
         node.parentElement?.hasAttribute?.('data-radix-popper-content-wrapper') ||
         node.classList?.contains('sticky') || node.classList?.contains('fixed');
       let nested = false;

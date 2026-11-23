@@ -22,14 +22,14 @@ Dream Skin 是一款跨平台的 AI 桌面客户端外观与主题管理器。�
 
 ## 下载与安装
 
-**最新发布版本：`v3.4.0`** · [前往 GitHub Releases 下载](https://github.com/xxloocee/Dream-Skin/releases)
+**最新发布版本：`v3.4.1`** · [前往 GitHub Releases 下载](https://github.com/xxloocee/Dream-Skin/releases)
 
 | 平台 | 版本类型 | 系统要求 | 安装包文件 |
 | --- | --- | --- | --- |
-| **Windows** | 安装版 (Setup) | Windows 10/11 x64 | `DreamSkin-v3.4.0-windows-x64-setup.exe` |
-| **Windows** | 便携版 (Portable) | Windows 10/11 x64 | `DreamSkin-v3.4.0-windows-x64-portable.zip` |
-| **macOS** | Intel 芯片 | macOS 13+ | `DreamSkin-v3.4.0-macos-x64.dmg` |
-| **macOS** | Apple Silicon | macOS 13+ | `DreamSkin-v3.4.0-macos-arm64.dmg` |
+| **Windows** | 安装版 (Setup) | Windows 10/11 x64 | `DreamSkin-v3.4.1-windows-x64-setup.exe` |
+| **Windows** | 便携版 (Portable) | Windows 10/11 x64 | `DreamSkin-v3.4.1-windows-x64-portable.zip` |
+| **macOS** | Intel 芯片 | macOS 13+ | `DreamSkin-v3.4.1-macos-x64.dmg` |
+| **macOS** | Apple Silicon | macOS 13+ | `DreamSkin-v3.4.1-macos-arm64.dmg` |
 
 - **先安装目标客户端**：运行前请确保已安装 Codex、Claude Desktop 或 DSH。
 - **开箱即用**：安装包已内置运行环境，无需额外部署 Node.js。

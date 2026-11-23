@@ -36,7 +36,9 @@ namespace DreamSkin.SharedHost
                 try
                 {
                     var ui = Path.Combine(root, "ui", "manager"); SafeFiles.Check(Path.Combine(ui, "index.html"), root);
-                    var environment = await CoreWebView2Environment.CreateAsync(null, Path.Combine(sessionRoot, "webview"));
+                    // Keep localStorage preferences across restarts and package locations.
+                    var profile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "CodexDreamSkin", "manager", "webview");
+                    var environment = await CoreWebView2Environment.CreateAsync(null, profile);
                     if (closed) return;
                     await view.EnsureCoreWebView2Async(environment); if (closed) return;
                     videoPreview = new VideoPreviewDecoder(environment, content);
@@ -71,7 +73,7 @@ namespace DreamSkin.SharedHost
                 closed = true; Desktop.Close(); nativeFiles?.Close(); backend?.Dispose(); resources.Clear(); videoPreview?.Dispose(); view.Dispose();
                 // Only the random session directory allocated by this window is eligible for cleanup.
                 try { foreach (var file in Directory.GetFiles(mediaDirectory)) File.Delete(file); Directory.Delete(mediaDirectory); } catch { }
-                // WebView2 may still own profile files; defer their removal rather than deleting a live profile tree.
+                // The persistent WebView profile is outside this temporary session directory.
             };
         }
         private void StartBackend()

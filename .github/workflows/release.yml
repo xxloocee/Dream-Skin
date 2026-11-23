@@ -55,7 +55,7 @@ jobs:
             throw "macos/package.json ($packageVersion) does not match tag version ($version)."
           }
           $readme = Get-Content -LiteralPath 'README.md' -Raw -Encoding UTF8
-          $readmeVersionMatch = [regex]::Match($readme, '(?m)^\s*.*?`(\d+\.\d+\.\d+)`')
+          $readmeVersionMatch = [regex]::Match($readme, '(?m)^\s*.*?`v?(\d+\.\d+\.\d+)`')
           if (-not $readmeVersionMatch.Success -or $readmeVersionMatch.Groups[1].Value -ne $version) {
             throw "README current version does not match tag version ($version)."
           }

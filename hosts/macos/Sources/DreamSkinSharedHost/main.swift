@@ -25,7 +25,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate, WKSc
             try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true, attributes: [.posixPermissions: 0o700])
             media = MediaResources(directory: directory)
             let config = WKWebViewConfiguration(); config.setURLSchemeHandler(media, forURLScheme: "dreamskin-media")
-            config.websiteDataStore = .nonPersistent()
+            // Keep localStorage preferences, including the manager UI style, across launches.
+            config.websiteDataStore = .default()
             config.userContentController.add(self, name: "manager")
             // Block every network scheme even if a compromised page tries to fetch one.
             let rules = "[{\"trigger\":{\"url-filter\":\"^https?://\"},\"action\":{\"type\":\"block\"}}]"
