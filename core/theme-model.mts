@@ -57,8 +57,8 @@ export function parameters(config: Record<string, unknown>): { stored: ThemePara
   } };
 }
 
-const categories = ["dynamic", "people", "anime", "landscape", "city", "animals", "technology", "art"];
-const labels = ["动态", "人物", "动漫", "风景", "城市", "萌宠", "科技", "艺术"];
+const categories = ["dynamic", "startup", "people", "anime", "landscape", "city", "animals", "technology", "art"];
+const labels = ["动态", "启动动画", "人物", "动漫", "风景", "城市", "萌宠", "科技", "艺术"];
 function displayCategories(category: string, tags: string[], extension: string): string[] {
   const result = categories.filter((id, index) => category.toLowerCase() === id ||
     tags.some(tag => tag.toLowerCase() === id || tag === labels[index]));

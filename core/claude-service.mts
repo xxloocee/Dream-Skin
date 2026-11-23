@@ -207,14 +207,14 @@ export class AppearanceService<T extends AppearanceTarget> {
         selected = await this.startupVideo(params.theme, params.expectedRevision);
         settings.theme = params.theme; settings.themeName = selected.name;
       }
-      await saveStartupAnimationSettings(this.directory, settings);
+      const saved = await saveStartupAnimationSettings(this.directory, settings);
       this.startupConfigured = undefined;
       if (selected) {
         this.startupDiagnostics = [];
-        await this.runtime!.configureStartup({ enabled: settings.enabled, video: settings.enabled ? selected.video : null });
-      } else await this.configureStartup(settings);
+        await this.runtime!.configureStartup({ enabled: saved.enabled, video: saved.enabled ? selected.video : null });
+      } else await this.configureStartup(saved);
       this.startupConfigured = Promise.resolve();
-      return settings;
+      return saved;
     });
   }
   private receiptFile(id: string): string {

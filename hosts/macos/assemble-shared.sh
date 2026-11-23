@@ -36,7 +36,7 @@ for preset in gothic-void-crusade ink-feather-glow silver-glass-dream tyndall-ra
   /usr/bin/ditto "$ROOT/macos/presets/preset-$preset" "$ENGINE/presets/preset-$preset"
 done
 # Personal video presets share the Windows source packs and their full parameters.
-for preset in neon-azure-dream sunlit-breeze-walk starlit-guardian ink-shadow-snow-eyes cloud-whisper-window crimson-feather-dusk moonlit-tidal-blade starlit-embers prismatic-star-eyes; do
+for preset in neon-azure-dream sunlit-breeze-walk starlit-guardian ink-shadow-snow-eyes cloud-whisper-window crimson-feather-dusk moonlit-tidal-blade starlit-embers prismatic-star-eyes dragon-startup; do
   /usr/bin/ditto "$ROOT/windows/presets/preset-$preset" "$ENGINE/presets/preset-$preset"
 done
 /bin/bash "$ROOT/macos/scripts/prepare-node-runtime.sh" "$ENGINE/runtime/node"

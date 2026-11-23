@@ -10,6 +10,7 @@ import { SearchIcon, XIcon } from "./Icons";
 
 const categories: Record<string, string> = {
   dynamic: "动态",
+  startup: "启动动画",
   landscape: "风景",
   people: "人物",
   anime: "动漫",

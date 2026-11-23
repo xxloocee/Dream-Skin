@@ -50,7 +50,7 @@ const choices = {
   taskMode: ["任务页模式", [["auto", "自动"], ["ambient", "氛围"], ["banner", "横幅"], ["full", "完整"], ["off", "关闭"]]],
 } as const;
 
-const TAG_LIST = ["动态", "人物", "动漫", "风景", "城市", "萌宠", "科技", "艺术"] as const;
+const TAG_LIST = ["动态", "启动动画", "人物", "动漫", "风景", "城市", "萌宠", "科技", "艺术"] as const;
 
 type EditorTab = "info" | "visual" | "framing";
 

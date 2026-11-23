@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "preset-dragon-startup",
+  "name": "龙娘启动动画",
+  "image": "background.mp4",
+  "category": "dream",
+  "tags": ["动态", "启动动画", "动漫", "龙娘"],
+  "appearance": "auto",
+  "art": {
+    "focusX": 0.5,
+    "focusY": 0.5,
+    "safeArea": "auto",
+    "taskMode": "auto",
+    "bubbleOpacity": 0,
+    "surfaceOpacity": 0.3,
+    "positionX": 0,
+    "positionY": 0,
+    "zoom": 1,
+    "positionMode": "locked"
+  },
+  "palette": {}
+}
