@@ -7,6 +7,7 @@
 <p align="center"><strong>为 AI 桌面客户端换上喜欢的背景，集中管理主题与界面外观。</strong></p>
 
 <p align="center">
+  <a href="#效果与界面展示">效果展示</a> ·
   <a href="#下载与安装">下载安装</a> ·
   <a href="#主要功能">主要功能</a> ·
   <a href="#快速上手">快速上手</a> ·
@@ -17,6 +18,25 @@
 </p>
 
 Dream Skin 是一款跨平台的 AI 桌面客户端外观与主题管理器。支持 Codex、Claude Desktop（Code 页面）及 DSH（DeepSeek Harness），提供图片/视频动态背景、精细透明度调节、社区主题一键应用等功能。
+
+---
+
+## 效果与界面展示
+
+### 🌟 Codex 实际换肤效果
+
+![Codex 实际换肤效果](assets/screenshots/codex-preview.jpg)
+
+> **实际效果**：在 Codex 中呈现通透半透明的毛玻璃质感与高清壁纸融合（示例：银璃幻梦主题），保持界面美观的同时不影响文本阅读与编码体验。
+
+### 🖥️ 管理器控制台界面
+
+Dream Skin 拥有现代化的可视化控制台，内置多套界面风格，支持直观浏览主题库并实时微调外观参数：
+
+| 流体毛玻璃风格 | 瑞士网格风格 |
+| :---: | :---: |
+| <img src="assets/screenshots/manager-ui-glass.jpg" alt="Dream Skin 控制台 - 流体毛玻璃风格" width="100%"> | <img src="assets/screenshots/manager-ui-grid.jpg" alt="Dream Skin 控制台 - 瑞士网格风格" width="100%"> |
+| **流体毛玻璃风格**：通透晶莹的现代化设计，支持右侧实时微调遮罩深度与面板透光 | **瑞士网格风格**：严谨工整的网格排版，清晰展示客户端连接状态与当前应用主题 |
 
 ---
 
